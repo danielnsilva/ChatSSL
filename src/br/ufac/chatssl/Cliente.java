@@ -1,4 +1,4 @@
-package br.ufac.scmus;
+package br.ufac.chatssl;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -53,7 +53,7 @@ public class Cliente {
 	
 	public void run() {
 		
-		JFrame frameChat = new JFrame("SCMUS2");
+		JFrame frameChat = new JFrame("ChatSSL");
 		JPanel panelMensagens = new JPanel();
 		panelMensagens.setBorder(new TitledBorder(null, "Mensagens", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		JPanel panelConexao = new JPanel();
@@ -178,7 +178,7 @@ public class Cliente {
 			if (ssl.isSelected()) {
 				
 				KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-				ks.load(new FileInputStream("src/br/ufac/scmus/cert.keys"), "ufac2015".toCharArray());
+				ks.load(new FileInputStream("src/br/ufac/chatssl/cert.keys"), "ufac2015".toCharArray());
 
 				KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
 				kmf.init(ks, "ufac2015".toCharArray());

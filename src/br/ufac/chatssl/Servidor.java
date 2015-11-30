@@ -1,4 +1,4 @@
-package br.ufac.scmus;
+package br.ufac.chatssl;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
