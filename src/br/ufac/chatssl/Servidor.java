@@ -72,6 +72,10 @@ public class Servidor {
 			
 			System.out.println("Servidor iniciado");
 			
+			if (ssl) {
+				System.out.println("SSL habilitado!");
+			}
+			
 			while (true) {
 				
 				socketCliente = (ssl) ? socketServidorSSL.accept() : socketServidor.accept();
@@ -81,6 +85,8 @@ public class Servidor {
 				InputStreamReader isrUsuario = new InputStreamReader(socketCliente.getInputStream());
 				BufferedReader readerUsuario = new BufferedReader(isrUsuario);
 				final String usuario = readerUsuario.readLine();
+				
+				System.out.println("Usuário " + usuario + " conectado. Porta: " + socketCliente.getLocalPort());
 				
 				Thread t = new Thread(new Runnable() {
 					@Override
