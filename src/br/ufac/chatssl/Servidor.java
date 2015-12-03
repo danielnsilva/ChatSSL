@@ -49,7 +49,7 @@ public class Servidor {
 			if (ssl) {
 				
 				KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-				ks.load(new FileInputStream("src/br/ufac/scmus/cert.keys"), "ufac2015".toCharArray());
+				ks.load(new FileInputStream("src/br/ufac/chatssl/cert.keys"), "ufac2015".toCharArray());
 
 				KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
 				kmf.init(ks, "ufac2015".toCharArray());
